@@ -74,7 +74,7 @@ var level2State = {
     const overlap = game.physics.arcade.overlap(this.obstacles, this.hero);
     const hitPlatform = game.physics.arcade.collide(this.ground, this.hero);
     const hitMonster = game.physics.arcade.overlap(this.monsters, this.hero);
-    const shootMonster = game.physics.arcade.overlap(this.bullets, this.cssmonster);
+    const shootMonster = game.physics.arcade.overlap(this.bullets, this.cssmonster, this.monsterHit, null, this);
     const boardSpaceship = game.physics.arcade.overlap(this.spaceships, this.hero);
     const cursors = game.input.keyboard.createCursorKeys();
 
@@ -106,6 +106,9 @@ var level2State = {
     if(cursors.up.isDown && this.hero.body.touching.down && hitPlatform) {
       this.hero.body.velocity.y = -300;
     }
+  },
+  monsterHit: function(monster, bullet) {
+    bullet.kill();
   },
   checkButton: function(event) {
     const key = event.key;
