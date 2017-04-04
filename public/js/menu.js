@@ -6,10 +6,8 @@ var menuState = {
   },
   start: function(event) {
     const key = event.key;
-    if(event.key.length === 1) {
-      game.input.keyboard.onDownCallback = null;
-      if(key === '1' || key === '2' || key === '3') game.state.start(`level${key}`);
-      else game.state.start('level1');
-    }
+    game.input.keyboard.onDownCallback = null;
+    if(key === '1' || key === '2' || key === '3') game.state.start(`level${key}`);
+    else game.state.start('level1');
   }
 }
