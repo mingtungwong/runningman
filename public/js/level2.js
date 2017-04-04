@@ -37,6 +37,7 @@ var level2State = {
     this.hero = game.add.sprite(300, 375, 'angryhero');
     this.hero.animations.add('run', [0, 1, 2, 3], 15, true);
     this.hero.width = 48;
+    if(heroYPos) this.hero.position.y = heroYPos;
     this.hero.enableBody;
 
     game.physics.arcade.enable(this.hero);

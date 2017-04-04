@@ -1,6 +1,7 @@
 var score = 0;
 var bgXPos = 0;
 var bgYPos = 0;
+var heroYPos = 0;
 
 var loadState = {
   preload: function() {

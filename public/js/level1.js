@@ -76,6 +76,7 @@ var level1State = {
   startLevel2: function() {
     bgXPos = this.scrollingbg.tilePosition.x;
     bgYPos = this.scrollingbg.tilePosition.y;
+    heroYPos = this.hero.position.y;
     game.input.keyboard.onDownCallback = null;
     game.state.start('level2');
   }
