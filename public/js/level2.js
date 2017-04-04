@@ -98,12 +98,9 @@ var level2State = {
     if(score >= 2000 && this.obstacle.x <= -100 && this.cssmonster.x <= -100 && this.isPlaying) this.spaceshipSpeed = -10;
     if(this.isPlaying) this.spaceship.x += this.spaceshipSpeed;
     if(!this.isPlaying) this.spaceship.y += this.spaceshipYSpeed;
-    if(!this.isPlaying && this.spaceship.y <= -400) {
-      game.input.keyboard.onDownCallback = null;
-      game.state.start('level2to3');
-    }
+    if(!this.isPlaying && this.spaceship.y <= -400) game.state.start('level2to3');
 
-    if(cursors.up.isDown && this.hero.body.touching.down && hitPlatform) {
+    if(cursors.up.isDown && this.hero.body && this.hero.body.touching.down && hitPlatform) {
       this.hero.body.velocity.y = -300;
     }
   },
@@ -152,6 +149,7 @@ var level2State = {
     return [xCoord, yCoord];
   },
   startTransition: function() {
+    game.input.keyboard.onDownCallback = null;
     this.hero.destroy();
     this.spaceshipSpeed = 0;
     this.spaceshipYSpeed = -5;
