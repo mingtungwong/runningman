@@ -16,11 +16,5 @@ var winState = {
 
     game.input.keyboard.onDownCallback = this.restart;
   },
-  restart: function(event) {
-    if(event.key.length === 1 && event.key !== ' ') {
-      score = 0;
-      game.input.keyboard.onDownCallback = null;
-      game.state.start('menu');
-    }
-  }
+  restart: restartGame
 }

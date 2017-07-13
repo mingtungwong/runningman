@@ -2,6 +2,13 @@ var score = 0;
 var bgXPos = 0;
 var bgYPos = 0;
 var heroYPos = 0;
+var restartGame = function(event) {
+  if(event.key !== ' ') {
+    score = 0;
+    game.input.keyboard.onDownCallback = null;
+    game.state.start('menu');
+  }
+}
 
 var loadState = {
   preload: function() {
