@@ -1,4 +1,4 @@
-<h1>Running Man<h1>
+<h1>Running Man</h1>
 <p>
   Running Man is a game built using the Phaser Game Framework. The core concept of Running Man is the changing gameplay. The game             begins as a simple running game and quickly evolves as the level progresses. Running Man uses original art assets and animations that
   were created by hand in GIMP.
